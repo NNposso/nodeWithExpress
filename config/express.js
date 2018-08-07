@@ -32,7 +32,7 @@ module.exports = function() {
     app.use(session({
         secret: 'session',
         resave: false,
-        saveUninitialized: true
+        saveUninitialized: true,
     }));
     // -------------------------------------------------->
 
