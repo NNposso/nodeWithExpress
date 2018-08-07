@@ -1,0 +1,23 @@
+{
+  "name": "nodewithexpress",
+  "version": "1.0.0",
+  "description": "just learning",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "connect": "^3.6.6",
+    "cookie-session": "^2.0.0-beta.3",
+    "express": "^4.16.3",
+    "express-validator": "^5.3.0",
+    "jade": "^1.11.0",
+    "morgan": "^1.9.0",
+    "node-sass-middleware": "^0.11.0"
+  }
+}
