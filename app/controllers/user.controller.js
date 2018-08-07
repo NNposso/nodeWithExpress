@@ -21,7 +21,7 @@ exports.login = function(req, res) {
     if (req.body.remember === 'remember') {
         req.session.remember = true;
         req.session.email = req.body.email;
-        req.sessionOptions.maxAge = 6000; // Milliseconds
+        req.session.cookie.maxAge = 60000; // Milliseconds
     }
     // ------------------------------------------------------------------------------->
 
@@ -32,7 +32,7 @@ exports.login = function(req, res) {
 };
 
 exports.logout = function(req, res) {
-    req.session = null;
+    req.session.destroy();
     res.render('index', {
         title: 'See you again later',
         isLoggedIn: false

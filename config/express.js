@@ -4,7 +4,8 @@ var compression = require('compression');
 var bodyParser = require('body-parser');
 var sass = require('node-sass-middleware');
 var validator = require('express-validator');
-var cookieSession = require('cookie-session');
+// var cookieSession = require('cookie-session');
+var session = require('express-session');
 
 module.exports = function() {
     var app = express();
@@ -21,10 +22,19 @@ module.exports = function() {
     // ------------------------------------------------->
 
     //Include Cookie-session
-    app.use(cookieSession({
-        name: 'session',
-        keys: ['secret_key1', 'secret_key2']
+    // app.use(cookieSession({
+    //     name: 'session',
+    //     keys: ['secret_key1', 'secret_key2']
+    // }));
+
+    /*Include express-session Collect in Memory 
+    but it's can store add MongoDB or Redis etc.*/
+    app.use(session({
+        secret: 'session',
+        resave: false,
+        saveUninitialized: true
     }));
+    // -------------------------------------------------->
 
     app.use(bodyParser.urlencoded({
         extended: true
